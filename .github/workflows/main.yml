@@ -1,0 +1,21 @@
+name: Arduino Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: Run Arduino Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: arduino/arduino-lint-action
+        uses: arduino/arduino-lint-action@v1.0.2
+            
