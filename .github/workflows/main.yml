@@ -16,6 +16,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: arduino/arduino-lint-action
-        uses: arduino/arduino-lint-action@v1.0.2
+      - name: Set up Arduino CLI
+        uses: arduino/setup-arduino-cli@v1
+        with:
+          version: 'latest'
+
+      - name: Run Arduino Lint
+        run: arduino-cli lint .
             
