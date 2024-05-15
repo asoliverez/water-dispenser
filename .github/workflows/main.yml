@@ -1,26 +1,10 @@
 name: Arduino Lint
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+on: [push, pull_request]
 jobs:
   lint:
-    name: Run Arduino Lint
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Set up Arduino CLI
-        uses: arduino/setup-arduino-cli@v1
-        with:
-          version: 'latest'
-
-      - name: Run Arduino Lint
-        run: arduino-cli lint .
+      - uses: actions/checkout@v4
+      - uses: arduino/arduino-lint-action@v1
             
