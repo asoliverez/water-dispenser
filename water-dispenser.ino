@@ -1,6 +1,8 @@
 #include <LiquidCrystal.h>
 #include <FlowSensor.h>
 
+#define typeFlow YFS201
+
 // Definición de pines
 const int fichaPin = 7;
 const int pulsador1Pin = 0;
@@ -13,7 +15,7 @@ const int sensorFlujoPin = 6;
 LiquidCrystal lcd(11, 12, 2, 3, 4, 5);
 
 // Inicialización del sensor de flujo
-FlowSensor flowSensor(sensorFlujoPin);
+FlowSensor flowSensor(typeFlow, sensorFlujoPin);
 
 // Variables para almacenar el estado de los pines
 int fichaEstado = LOW;
